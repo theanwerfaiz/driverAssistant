@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% comment %} title {% endcomment %}
+    <title>
+      {% block mainTitle %}
+      
+      {% endblock mainTitle %} ~ Driver Assistant
+    </title>
+
+    {% comment %} stylesheets {% endcomment %} {% load static%}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'driverAssist/css/base.css' %}"
+    />
+
+    {% comment %} css {% endcomment %} {% block mainCss %}{% endblock mainCss %}
+  </head>
+  <body>
+    {% comment %} Navigation bar {% endcomment %}
+    <header class="container">
+      <div class="logo-section">
+        <a href="/driverAssist">
+          <span>Driver Assistant</span>
+        </a>
+      </div>
+      <div class="navbar">
+        <a class="nav-item" href="/driverAssist">Home</a>
+        <a class="nav-item" href="/navigation">Navigation</a>
+        <a class="nav-item" href="/eedback">Feedback</a>
+        <a class="nav-item" href="signIn">Sign In</a>
+        <a class="nav-item" href="/signOut">Sign Out</a>
+      </div>
+    </header>
+
+      {% comment %} Main content {% endcomment %}
+      <div class="main-body">{% block mainBody %}{% endblock mainBody %}</div>
+  </body>
+</html>
+
+{% comment %} footerScripts {% endcomment %} 
+{% block footerScript %}{% endblock footerScript %}

@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+body{
+  --primary-color: rgb(39, 208, 210);
+}
+
+/* Navigationbar */
+.container{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: var(--header-height);
+  width: 100%;
+  /* background-color: rgb(255, 255, 255); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+.container .logo-section{
+  margin-left: 75px;
+}
+.container .logo-section a{
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .logo-section a span{
+  font-size: 25px;
+  font-weight: bold;
+}
+.container .navbar {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 75px;
+  cursor: pointer;
+}
+
+.container .navbar .nav-item {
+  margin: 10px 5px;
+  padding: 10px 10px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.container .navbar .nav-item:hover {
+  background-color: var(--primary-color);
+  transition: 0.25s;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  header .navbar{
+    display: none;
+  }
+}
