@@ -19,11 +19,12 @@
       href="{% static 'driverAssist/css/base.css' %}"
     />
 
-    {% comment %} css {% endcomment %} {% block mainCss %}{% endblock mainCss %}
+    {% comment %} css {% endcomment %} 
+    {% block mainCss %}{% endblock mainCss %}
   </head>
   <body>
     {% comment %} Navigation bar {% endcomment %}
-    <header class="container">
+    {% comment %} <header class="container">
       <div class="logo-section">
         <a href="/driverAssist">
           <span>Driver Assistant</span>
@@ -36,7 +37,24 @@
         <a class="nav-item" href="signIn">Sign In</a>
         <a class="nav-item" href="/signOut">Sign Out</a>
       </div>
-    </header>
+    </header> {% endcomment %}
+
+    <!-- header -->
+    <nav>
+      <label class="logo">Driver Assistant</label>
+      <div class="quick-links">
+        <a href="/driverAssist"  class="nav-item active">Home</a>
+        <a href="/driverAssist/navigation"  class="nav-item">Navigation</a>
+        <a href="javascript:void(0)"  class="nav-item">Feedback</a>
+        <a href="javascript:void(0)"  class="nav-item">Sign Up</a>
+        <a href="javascript:void(0)"  class="nav-item">Sign In</a>
+        <a href="javascript:void(0)" class="nav-item">Sign Out</a>
+      </div>
+      <a href="javascript:void(0)" id="icon">
+        <i class="fas fa-bars"></i>
+      </a>
+    </nav>
+
 
       {% comment %} Main content {% endcomment %}
       <div class="main-body">{% block mainBody %}{% endblock mainBody %}</div>
