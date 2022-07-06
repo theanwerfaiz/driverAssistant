@@ -1,0 +1,18 @@
+{% extends 'driverAssist/baseTemplate.html' %}
+ {% block mainTitle %}Students {%endblock mainTitle %} 
+
+ <!-- css -->
+ {% load static %} 
+ {%block mainCss %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'driverAssist/css/students.css' %}"
+/>
+{% endblock mainCss %} 
+<!-- body -->
+ {% block mainBody %}
+<div class="content">
+ This is students details page.
+</div>
+{% endblock mainBody %}

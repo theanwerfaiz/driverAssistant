@@ -1,19 +1,33 @@
-{% extends 'driverAssist/baseTemplate.html' %}
- {% block mainTitle %}Navigation {%endblock mainTitle %} 
-
- {% comment %} css {% endcomment %} 
- {% load static %} 
- {%block mainCss %}
+{% extends 'driverAssist/baseTemplate.html' %} {% block mainTitle %}Navigation
+{%endblock mainTitle %} {% comment %} css {% endcomment %} {% load static %}
+{%block mainCss %}
 <link
   rel="stylesheet"
   type="text/css"
-  href="{% static 'driverAssist/css/home.css' %}"
+  href="{% static 'driverAssist/css/navigation.css' %}"
 />
-{% endblock mainCss %} 
-{% comment %} body {% endcomment %}
- {% block mainBody %}
+{% endblock mainCss %}
+<!-- body -->
+{% block mainBody %}
 <div class="content">
-    this is navigation page
-    {% comment %} <img src="{% static 'driverAssist/merce.jpg' %}" alt=""> {% endcomment %}
+  <div id="floating-panel">
+    <div>
+        <input type="text" id="from" placeholder="Origin" />
+    </div>
+    <div>
+        <input type="text" id="to" placeholder="Destination" />
+    </div>
+    <b>Mode of Travel</b>
+    <select id="mode">
+      <option value="DRIVING">Driving</option>
+      <option value="WALKING">Walking</option>
+      <option value="BICYCLEING">Bicycling</option>
+      <option value="TRANSIT">Transit</option>
+    </select>
+  </div>
+
+  <div id="map"></div>
 </div>
-{% endblock mainBody %}
+{% endblock mainBody %} {% block footerScript %}
+<script src="{% static 'driverAssist/js/navigation.js' %}"></script>
+{% endblock footerScript %}
